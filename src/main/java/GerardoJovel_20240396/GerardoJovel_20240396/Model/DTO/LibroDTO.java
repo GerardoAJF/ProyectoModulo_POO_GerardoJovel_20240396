@@ -21,9 +21,7 @@ public class LibroDTO {
     @NotBlank
     private String isbn;
 
-    @Positive
     private int año;
-
     private String genero;
 
     @NotNull

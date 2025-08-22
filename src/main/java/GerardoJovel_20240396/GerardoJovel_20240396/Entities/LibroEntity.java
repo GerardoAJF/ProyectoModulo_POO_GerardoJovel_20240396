@@ -17,14 +17,14 @@ public class LibroEntity {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator="seq_libro")
     @SequenceGenerator(name="seq_libro", sequenceName="seq_libro", allocationSize=1)
     private long id;
-    @Column(name = "TITULO")
+    @Column(name = "TITULO", nullable = false)
     private String titulo;
-    @Column(name = "ISBN")
+    @Column(name = "ISBN", nullable = false)
     private String isbn;
-    @Column(name = "AÑO_PUBLICACION")
+    @Column(name = "AÑO_PUBLICACION", nullable = true)
     private int año;
-    @Column(name = "GENERO")
+    @Column(name = "GENERO", nullable = true)
     private String genero;
-    @Column(name = "AUTOR_ID")
+    @Column(name = "AUTOR_ID", nullable = false)
     private long autor_id;
 }
