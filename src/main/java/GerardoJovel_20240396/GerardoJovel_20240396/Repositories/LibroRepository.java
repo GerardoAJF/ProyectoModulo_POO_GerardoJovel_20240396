@@ -1,4 +1,9 @@
 package GerardoJovel_20240396.GerardoJovel_20240396.Repositories;
 
-public interface LibroRepository {
+import GerardoJovel_20240396.GerardoJovel_20240396.Entities.LibroEntity;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface LibroRepository extends JpaRepository<LibroEntity, Long> {
 }
