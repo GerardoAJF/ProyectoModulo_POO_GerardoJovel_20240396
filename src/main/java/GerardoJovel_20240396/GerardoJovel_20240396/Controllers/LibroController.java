@@ -29,6 +29,12 @@ public class LibroController {
         return service.getAllBooks();
     }
 
+    @GetMapping("/getBookByName/{name}")
+    public List<LibroDTO> getBookByName (@PathVariable String name) {
+        // Le pedimos al service que filtre los libros por nombre
+        return  service.getBookByName(name);
+    }
+
     /**
      * @param id Identificador único del libro
      * @return Retorna un ResponseEntity con el libro en específico en formato DTO

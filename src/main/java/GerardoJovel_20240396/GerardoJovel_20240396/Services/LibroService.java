@@ -30,6 +30,19 @@ public class LibroService {
     }
 
     /**
+     * @param name Nombre por el que va a filtrar a los libros
+     * @return Retorna una lista de libros en formato DTO, que su titulo contenga el nombre
+     */
+    public List<LibroDTO> getBookByName(String name) {
+        // Obtenemos todos los libros que tengan un subtring en su titulo
+        // Convertimos esta lista de Entities a DTOs
+        return repository.findByTituloContains(name).stream()
+                .map(this::BookToDTO)
+                .collect(Collectors.toList());
+    }
+
+
+    /**
      * @param id Identificador único del libro (long)
      * @return Retorna el DTO de un libro en específico
      */
