@@ -138,12 +138,13 @@ public class LibroController {
     public ResponseEntity<?> deleteBook (@PathVariable long id) {
         try {
             // El service elimina el libro por el ID
-            service.deleteBook(id);
+            LibroDTO answer = service.deleteBook(id);
 
             // Si no hay excepciones, entonces manda una respuesta con un código positivo
             return ResponseEntity.status(HttpStatus.OK).body(Map.of(
                     "status", "Success",
-                    "message", "Libro eliminado exitosamente"
+                    "message", "Libro eliminado exitosamente",
+                    "data", answer
             ));
         } catch (IllegalArgumentException e) {
             // Si el service no encontro ningún libro con ese Id, retorna un código http negativo BAD REQUEST

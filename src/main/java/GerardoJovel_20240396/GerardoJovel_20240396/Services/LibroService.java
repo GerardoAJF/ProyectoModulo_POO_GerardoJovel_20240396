@@ -114,17 +114,20 @@ public class LibroService {
 
     /**
      * @param id Identificador único del libro (long)
-     * @return Retorna verdadero si se ha logrado eliminar el libro sin complicaciones
+     * @return Retorna el libro que se ha eliminado en formato DTO
      */
-    public boolean deleteBook(long id) {
+    public LibroDTO deleteBook(long id) {
         try {
             // Validamos que el libro exista
             if (!repository.existsById(id)) {
                 throw  new IllegalArgumentException();
             }
-            // Eliminamos el libro y retornamos verdadero para demostrar que funciona
+            // Obtenemos el libro
+            LibroEntity entity = repository.getReferenceById(id);
+            // Eliminamos el libro
             repository.deleteById(id);
-            return true;
+            // Retornamos el libro previamente obtenido
+            return BookToDTO(entity);
         }
         catch (IllegalArgumentException e) {
             throw new IllegalArgumentException("No existe un libro con ese ID");
