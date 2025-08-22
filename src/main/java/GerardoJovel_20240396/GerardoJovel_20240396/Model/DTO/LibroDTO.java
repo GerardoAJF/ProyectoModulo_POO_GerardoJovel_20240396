@@ -12,18 +12,25 @@ import lombok.ToString;
 @Getter @Setter
 @EqualsAndHashCode
 public class LibroDTO {
+    // Validamos que el ID no sea nulo
     @NotNull
     private long id;
 
+    // Validamos que el titulo no sea nulo
     @NotBlank
     private String titulo;
 
+    // Validamos que el ISBN no sea nulo
     @NotBlank
     private String isbn;
 
+    // El año si puede ser nulo, e incluso negativo (para representar fechas antes de cristo)
     private int año;
+
+    // El genero tambien puede ser nulo
     private String genero;
 
+    // Validamos que el id no sea nulo
     @NotNull
     private long autor_id;
 }

@@ -9,5 +9,6 @@ import java.util.List;
 
 @Repository
 public interface LibroRepository extends JpaRepository<LibroEntity, Long> {
+    // Definimos un nuevo metodo para buscar por nombre
     List<LibroEntity> findByTituloContains(String name);
 }

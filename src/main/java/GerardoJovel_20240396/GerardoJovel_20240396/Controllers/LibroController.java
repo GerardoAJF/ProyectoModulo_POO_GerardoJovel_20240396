@@ -2,7 +2,6 @@ package GerardoJovel_20240396.GerardoJovel_20240396.Controllers;
 
 import GerardoJovel_20240396.GerardoJovel_20240396.Model.DTO.LibroDTO;
 import GerardoJovel_20240396.GerardoJovel_20240396.Services.LibroService;
-import jakarta.persistence.Entity;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
